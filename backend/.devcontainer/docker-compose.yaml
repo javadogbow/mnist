@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  backend:
+    container_name: "backend"
+    build: 
+      context: .
+    shm_size: "9gb"
+    volumes:
+      - ./..:/app
+    stdin_open: true
+    tty: true
+    command: tail -f /dev/null
