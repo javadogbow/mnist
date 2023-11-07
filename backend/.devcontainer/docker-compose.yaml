@@ -10,3 +10,10 @@ services:
     stdin_open: true
     tty: true
     command: tail -f /dev/null
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
