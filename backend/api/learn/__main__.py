@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = NeuralNetwork().to(DEVICE)
 BATCH_SIZE = 32
-EPOCH = 1
+EPOCH = 30
 ################################################################################################################
 
 ################################################### DATASETS ###################################################

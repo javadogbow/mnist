@@ -1,9 +1,9 @@
 version: '3.3'
 services:
-  mnist:
+  api:
     container_name: "api"
     build: 
-      context: .
+      context: ./backend
     shm_size: "9gb"
     ports:
       - "4000:8000"
@@ -18,3 +18,15 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+
+  web:
+    container_name: 'web'
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    command: npm run dev --host
+    working_dir: /app
+
