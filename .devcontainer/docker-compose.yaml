@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  backend:
-    container_name: "backend"
+  mnist:
+    container_name: "mnist"
     build: 
       context: .
     shm_size: "9gb"

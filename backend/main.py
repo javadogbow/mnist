@@ -1,5 +1,5 @@
-from NewralNetwork import NewralNetwork
-from plot_loss import LossPloter
+from core.NewralNetwork import NewralNetwork
+from .plot_loss import LossPloter
 from torchvision.datasets import MNIST
 from torch.autograd import Variable
 import torch
@@ -9,7 +9,7 @@ import torch.nn as nn
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 BATCH_SIZE = 32
-EPOCH = 30
+EPOCH = 3
 data_folder = './data'
 transform = transforms.Compose([transforms.ToTensor()])
 
@@ -49,7 +49,7 @@ for epoch in range(EPOCH):
 
     loss_array.append(total_loss / num_train)
     loss_ploter.plot(epoch + 1, loss_array)
-    torch.save(model.state_dict(), 'model_weight.pth')
+    model.save_params()
 
     print('epoch: %d, loss: %f' % (epoch + 1, total_loss/num_train))
 

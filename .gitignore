@@ -1,3 +1,7 @@
-backend/__pycache__/
-backend/data/
-backend/model_weight.pth
+.idea
+
+data
+outputs
+
+backend/__pycache__
+core/__pycache__

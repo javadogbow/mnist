@@ -1,6 +1,6 @@
 {
-	"name": "backend",
+	"name": "mnist",
 	"dockerComposeFile": "./docker-compose.yaml",
-	"service": "backend",
+	"service": "mnist",
 	"workspaceFolder": "/app"
 }

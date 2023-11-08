@@ -26,3 +26,7 @@ class NewralNetwork(nn.Module):
         layer3 = self.layer3(output_layer2)
         output_layer3 = self.act3(layer3)
         return self.layer4(output_layer3)
+
+    def save_params(self):
+        torch.save(self.state_dict(), './outputs/parameters.pth')
+

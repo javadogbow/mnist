@@ -8,5 +8,5 @@ class LossPloter():
         plt.plot(list(range(epoch)), loss)
         plt.xlabel("epoch")
         plt.ylabel("loss")
-        plt.savefig(self.file_name)
+        plt.savefig('./outputs/' + self.file_name)
         plt.close()
