@@ -7,8 +7,7 @@ services:
     shm_size: "9gb"
     volumes:
       - ./..:/app
-    stdin_open: true
-    tty: true
+    working_dir: /app
     command: tail -f /dev/null
     deploy:
       resources:
