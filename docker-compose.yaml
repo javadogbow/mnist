@@ -1,0 +1,20 @@
+version: '3.3'
+services:
+  mnist:
+    container_name: "api"
+    build: 
+      context: .
+    shm_size: "9gb"
+    ports:
+      - "4000:8000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: uvicorn backend.api.server:app --host 0.0.0.0 --reload
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

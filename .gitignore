@@ -1,7 +1,7 @@
 .idea
 
-data
-outputs
+backend/data
+backend/outputs
 
 backend/__pycache__
-core/__pycache__
+backend/core/__pycache__

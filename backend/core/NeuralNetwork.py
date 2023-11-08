@@ -15,7 +15,7 @@ class NeuralNetwork(nn.Module):
         self.optimizer = optimizer.SGD(self.parameters(), lr=0.01, momentum=0.9)
 
     def load_params(self):
-        state_dict = torch.load('./outputs/parameters.pth')
+        state_dict = torch.load('./backend/outputs/parameters.pth')
         self.load_state_dict(state_dict)
 
     def forward(self, input_data):
@@ -27,5 +27,5 @@ class NeuralNetwork(nn.Module):
         return self.layer3(output_layer2)
 
     def save_params(self):
-        torch.save(self.state_dict(), './outputs/parameters.pth')
+        torch.save(self.state_dict(), './backend/outputs/parameters.pth')
 

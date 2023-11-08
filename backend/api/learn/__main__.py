@@ -1,4 +1,4 @@
-from core.NeuralNetwork import NeuralNetwork
+from backend.core.NeuralNetwork import NeuralNetwork
 from .plot_loss import LossPlotter
 from torchvision.datasets import MNIST
 from torch.autograd import Variable
@@ -10,11 +10,11 @@ from torch.utils.data import DataLoader
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 model = NeuralNetwork().to(DEVICE)
 BATCH_SIZE = 32
-EPOCH = 50
+EPOCH = 1
 ################################################################################################################
 
 ################################################### DATASETS ###################################################
-data_folder = './data'
+data_folder = './backend/data'
 transform = transforms.Compose([transforms.ToTensor()])
 
 train_data_with_labels = MNIST(data_folder, train=True, download=True, transform=transform)
