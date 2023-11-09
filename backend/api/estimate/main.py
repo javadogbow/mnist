@@ -6,7 +6,10 @@ from backend.core.NeuralNetwork import NeuralNetwork
 
 def estimate(image_bytes):
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    transform = transforms.Compose([transforms.ToTensor()])
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,))
+    ])
 
     model = NeuralNetwork().to(device)
     model.load_params()
