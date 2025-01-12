@@ -13,3 +13,5 @@ MNISTから取って来た画像を推論する
 ```shell
 python -m api.estimate
 ```
+
+https://github.com/user-attachments/assets/f15a4ce2-daa6-44ea-ad90-686ef9919209
